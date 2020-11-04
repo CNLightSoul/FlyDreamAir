@@ -776,6 +776,8 @@ public class FDAIndex extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        model.removeAllElements();
+        flightInfo.clear();
         welcomeLabel.setText("Welcome, " + username + "!");
         try{
             currentCustomer = new Customer(username);
