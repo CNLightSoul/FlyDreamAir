@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -30,7 +32,16 @@ public class FDALogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        registerWindow = new javax.swing.JFrame();
+        registerTitleLabel = new javax.swing.JLabel();
+        registerUsernameField = new javax.swing.JTextField();
+        registerPasswordField = new javax.swing.JPasswordField();
+        registerConfirmPasswordField = new javax.swing.JPasswordField();
+        usernameReisterLabel = new javax.swing.JLabel();
+        Password = new javax.swing.JLabel();
+        confrimLabel = new javax.swing.JLabel();
+        registerConfirmButton = new javax.swing.JButton();
+        registerWarningLabel = new javax.swing.JLabel();
         titleLable = new javax.swing.JLabel();
         usernameLable = new javax.swing.JLabel();
         usernameField = new javax.swing.JTextField();
@@ -38,16 +49,78 @@ public class FDALogin extends javax.swing.JFrame {
         passwordField = new javax.swing.JPasswordField();
         loginButton = new javax.swing.JButton();
         incorrectWarningLabel = new javax.swing.JLabel();
+        registerButton = new javax.swing.JButton();
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        registerTitleLabel.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        registerTitleLabel.setText("Register");
+
+        usernameReisterLabel.setText("Username");
+
+        Password.setText("Password");
+
+        confrimLabel.setText("Confirm Password");
+
+        registerConfirmButton.setText("Create Account");
+        registerConfirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerConfirmButtonActionPerformed(evt);
+            }
+        });
+
+        registerWarningLabel.setForeground(new java.awt.Color(241, 21, 37));
+        registerWarningLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout registerWindowLayout = new javax.swing.GroupLayout(registerWindow.getContentPane());
+        registerWindow.getContentPane().setLayout(registerWindowLayout);
+        registerWindowLayout.setHorizontalGroup(
+            registerWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerWindowLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(registerWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(usernameReisterLabel)
+                    .addComponent(Password)
+                    .addComponent(confrimLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(registerWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(registerPasswordField)
+                    .addComponent(registerUsernameField)
+                    .addComponent(registerConfirmPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
+                .addGap(71, 71, 71))
+            .addGroup(registerWindowLayout.createSequentialGroup()
+                .addGroup(registerWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(registerWindowLayout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(registerTitleLabel))
+                    .addGroup(registerWindowLayout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(registerConfirmButton))
+                    .addGroup(registerWindowLayout.createSequentialGroup()
+                        .addGap(162, 162, 162)
+                        .addComponent(registerWarningLabel)))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        registerWindowLayout.setVerticalGroup(
+            registerWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(registerWindowLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(registerTitleLabel)
+                .addGap(74, 74, 74)
+                .addGroup(registerWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(registerUsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usernameReisterLabel))
+                .addGap(38, 38, 38)
+                .addGroup(registerWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(registerPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Password))
+                .addGap(38, 38, 38)
+                .addGroup(registerWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(registerConfirmPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(confrimLabel))
+                .addGap(28, 28, 28)
+                .addComponent(registerConfirmButton)
+                .addGap(18, 18, 18)
+                .addComponent(registerWarningLabel)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -89,6 +162,13 @@ public class FDALogin extends javax.swing.JFrame {
         incorrectWarningLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         incorrectWarningLabel.setToolTipText("");
 
+        registerButton.setText("Register");
+        registerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,7 +194,10 @@ public class FDALogin extends javax.swing.JFrame {
                                             .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(282, 282, 282)
-                        .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(297, 297, 297)
+                        .addComponent(registerButton)))
                 .addContainerGap(126, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -134,7 +217,9 @@ public class FDALogin extends javax.swing.JFrame {
                 .addComponent(loginButton)
                 .addGap(18, 18, 18)
                 .addComponent(incorrectWarningLabel)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(registerButton)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -215,6 +300,51 @@ public class FDALogin extends javax.swing.JFrame {
         }// TODO add your handling code here:
     }//GEN-LAST:event_formWindowActivated
 
+    private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
+        registerWindow.pack();
+        registerWindow.setVisible(true);
+    }//GEN-LAST:event_registerButtonActionPerformed
+
+    private void registerConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerConfirmButtonActionPerformed
+        String registerUsername = registerUsernameField.getText();
+        String registerPassword = String.valueOf(registerPasswordField.getPassword());
+        String confirmPassword = String.valueOf(registerConfirmPasswordField.getPassword());
+        
+        if(registerUsername.equals("") || registerPassword.equals("") || confirmPassword.equals("")){
+            registerWarningLabel.setText("Please fill in all fields!");
+            return;
+        }
+        if(registerUsername.contains(",") || registerPassword.contains(",") || confirmPassword.contains(",")){
+            registerWarningLabel.setText("Illegal character ',' used!");
+            return;
+        }
+        if(!registerPassword.equals(confirmPassword)){
+            registerWarningLabel.setText("Password and Confirm Password are not identical!");
+            return;
+        }
+        
+        String fName = registerUsername + ".txt";
+        File newUser = new File(fName);
+        try {
+            if(newUser.createNewFile()){
+                BufferedWriter bw = new BufferedWriter(new FileWriter("login.txt",true));
+                bw.newLine();
+                bw.flush();
+                bw.append(registerUsername + "," + registerPassword);
+                bw.close();
+                incorrectWarningLabel.setText("New user created!");
+                registerWindow.dispose();
+            }
+            else{
+                registerWarningLabel.setText("This user already exists!");
+                return;
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(FDALogin.class.getName()).log(Level.SEVERE, null, ex);
+            return;
+        }
+    }//GEN-LAST:event_registerConfirmButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -253,13 +383,23 @@ public class FDALogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Password;
+    private javax.swing.JLabel confrimLabel;
     private static javax.swing.JLabel incorrectWarningLabel;
-    private javax.swing.JPanel jPanel1;
     protected javax.swing.JButton loginButton;
     private static javax.swing.JPasswordField passwordField;
     private javax.swing.JLabel passwordLable;
+    private javax.swing.JButton registerButton;
+    private static javax.swing.JButton registerConfirmButton;
+    private static javax.swing.JPasswordField registerConfirmPasswordField;
+    private static javax.swing.JPasswordField registerPasswordField;
+    private javax.swing.JLabel registerTitleLabel;
+    private static javax.swing.JTextField registerUsernameField;
+    private static javax.swing.JLabel registerWarningLabel;
+    private static javax.swing.JFrame registerWindow;
     private javax.swing.JLabel titleLable;
     private static javax.swing.JTextField usernameField;
     private javax.swing.JLabel usernameLable;
+    private javax.swing.JLabel usernameReisterLabel;
     // End of variables declaration//GEN-END:variables
 }
